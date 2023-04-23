@@ -1,13 +1,12 @@
 .dropdown {
   /* background-color: transparent; */
   background-color: var(--dark);
-  height: 40px;
+  height: 50px;
   border-radius: 50px;
-  margin-left: 15px;
-}
-
-.dropdown-right {
-  margin-left: 15px;
+  /* margin-left: 15px; */
+  margin: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .dropdown-item {
@@ -40,6 +39,7 @@ https://stackoverflow.com/questions/31237366/bootstrap-class-dropdown-menu-dropd
   outline: none !important;
   border: none;
   font-family: "Montserrat";
+  font-size: 1.1rem;
 }
 
 .dropdown-btn:hover {
@@ -63,46 +63,17 @@ https://stackoverflow.com/questions/31237366/bootstrap-class-dropdown-menu-dropd
   box-shadow: none;
 }
 
-/************************************************* mob and tab *************************************************/
+/************************************************ mob and tab ************************************************/
 @media (max-width: 850px) and (min-width: 600px) {
   .dropdown {
-    margin-left: 0;
-    height: 40px;
-    border-radius: 50px;
-    margin: 0;
-    margin-left: 10px;
-  }
-
-  .dropdown-right {
-    margin-left: 10px;
-  }
-
-  .dropdown-btn {
-    color: white;
-    outline: none !important;
-    border: none;
-    font-family: "Montserrat";
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
 @media (max-width: 600px) {
   .dropdown {
-    margin-left: 0;
-    height: 30px;
-    border-radius: 50px;
-    margin: 0;
-    margin-left: 5px;
-  }
-
-  .dropdown-right {
-    margin-left: 10px;
-  }
-
-  .dropdown-btn {
-    color: white;
-    outline: none !important;
-    border: none;
-    font-family: "Montserrat";
-    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

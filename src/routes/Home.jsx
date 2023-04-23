@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // my modules
 import Navbar from "../components/Navbar.jsx";
@@ -9,9 +10,12 @@ import "../css/home.css";
 import { vars, categoryDetails, countryDetails } from "../utilities/Vars.js";
 import PreferencesContext from "../utilities/PreferencesContext.js";
 import {
+  generateAxiosConfigHeader,
   generateGetURL,
   generateSearchURL,
 } from "../utilities/UtilityFunctions.js";
+import SearchBar from "../components/Searchbar.jsx";
+import { toast } from "react-hot-toast";
 
 const axios = require("axios").default;
 
@@ -20,6 +24,7 @@ const axios = require("axios").default;
 function Home() {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const [preferences, setPreferences] = useState({
     categoryKey: vars.defaultCategoryKey,
@@ -47,17 +52,21 @@ function Home() {
     setIsLoading(true);
 
     try {
-      const response = await axios.get(URL);
+      const response = await axios.get(
+        URL,
+        generateAxiosConfigHeader(localStorage.getItem("token"))
+      );
       // console.log(response.data);
 
       setNews(response.data);
       window.scrollTo(0, 0);
-      setIsLoading(false);
     } catch (error) {
-      console.error(error);
-      // console.log("error");
-      setIsLoading(false);
+      console.log(error.response.data.statusText);
+      toast.error(error.response.data.statusText);
+      navigate("/login");
     }
+
+    setIsLoading(false);
   }
 
   async function getNews(categoryKey, countryKey) {
@@ -130,7 +139,11 @@ function Home() {
       >
         <Navbar />
 
-        {isLoading ? loader : element}
+        <div>
+          <SearchBar />
+
+          {isLoading ? loader : element}
+        </div>
 
         <Footer />
       </PreferencesContext.Provider>

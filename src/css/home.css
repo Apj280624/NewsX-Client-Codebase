@@ -17,7 +17,8 @@ body {
 }
 
 .news-div {
-  margin: 100px 5% 100px 5%;
+  margin: 50px 5% 100px 5%;
+  /* border: 2px solid red; */
 }
 
 .news-item-div {
@@ -60,7 +61,7 @@ body {
   }
 
   .news-div {
-    margin: 160px 5% 100px 5%;
+    margin: 50px 5% 100px 5%;
   }
 
   .loader-div {
@@ -69,10 +70,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  .news-div {
-    margin: 100px 15px 100px 15px;
-  }
-
   .news-item-div {
     padding: 8px 15px 8px 15px;
   }
@@ -83,7 +80,7 @@ body {
   }
 
   .news-div {
-    margin: 140px 15px 100px 15px;
+    margin: 50px 15px 100px 15px;
   }
 
   .loader-div {

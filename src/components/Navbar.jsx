@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // my modules
 import SearchBar from "./Searchbar.jsx";
@@ -9,6 +9,17 @@ import { vars, routes } from "../utilities/Vars.js";
 
 function Navbar(props) {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLoginClick = (e) => {
+    navigate("/login");
+  };
+
+  const handleLogoutClick = (e) => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   function changeNavbarStyle() {
     if (window.scrollY >= 80) {
@@ -40,12 +51,32 @@ function Navbar(props) {
           </Link>
         </div>
 
-        <div className="dmenu-div">
+        {/* <div className="dmenu-div">
           <DMenu type={2} />
           <DMenu type={1} />
-        </div>
+        </div> */}
 
-        <SearchBar />
+        {/* <SearchBar /> */}
+
+        <button
+          style={{
+            fontFamily: "Montserrat",
+            backgroundColor: "var(--dark)",
+            color: "white",
+            borderRadius: "0.3rem",
+            height: "2.2rem",
+            width: "fit-content",
+            padding: "0 1rem 0 1rem",
+            border: "none",
+          }}
+          onClick={
+            !localStorage.getItem("token")
+              ? handleLoginClick
+              : handleLogoutClick
+          }
+        >
+          {!localStorage.getItem("token") ? "Login" : "Logout"}
+        </button>
       </nav>
     </div>
   );

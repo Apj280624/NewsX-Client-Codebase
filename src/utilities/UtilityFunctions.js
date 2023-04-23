@@ -24,9 +24,41 @@ function generateGetURL(category, country) {
   return URL;
 }
 
+const generateRegisterURL = () => {
+  return SERVER_ORIGIN + "/api/register";
+};
+
+const generateLoginURL = () => {
+  return SERVER_ORIGIN + "/api/login";
+};
+
+const generateLikeURL = (itemURL) => {
+  return SERVER_ORIGIN + "/api/like-item/?itemURL=" + itemURL;
+};
+
 function generateSearchURL(keyword) {
   let URL = SERVER_ORIGIN + "/api/search/?" + "keyword=" + keyword;
   return URL;
 }
 
-export { generateGetURL, generateSearchURL, exists };
+function generateAxiosConfigHeader(token) {
+  // console.log(token);
+  const axiosConfig = {
+    headers: {
+      "auth-token": token,
+    },
+  };
+
+  // console.log(axiosConfig);
+  return axiosConfig;
+}
+
+export {
+  generateGetURL,
+  generateSearchURL,
+  generateRegisterURL,
+  generateLoginURL,
+  generateLikeURL,
+  exists,
+  generateAxiosConfigHeader,
+};

@@ -1,8 +1,8 @@
-// const SERVER_ORIGIN = "http://localhost:4000";
-const SERVER_ORIGIN = "https://newsx-server-codebase.onrender.com";
+const SERVER_ORIGIN = "http://localhost:4000";
+// const SERVER_ORIGIN = "https://newsx-server-codebase.onrender.com";
 
 const vars = {
-  brandName: "NewsX",
+  brandName: "InfoToday",
   defaultCategoryKey: 0,
   defaultCountryKey: 0,
   nothingText: "Sorry! we found nothing",
@@ -15,6 +15,8 @@ const vars = {
 
 const routes = {
   home: "/",
+  register: "/register",
+  login: "/login",
 };
 
 const categoryDetails = [

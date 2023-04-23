@@ -34,7 +34,7 @@
 }
 
 .news-card-btn {
-  height: 40px;
+  /* height: 40px; */
   width: 100%;
   background-color: var(--yellow);
   border: none;
@@ -42,4 +42,6 @@
   border-bottom-right-radius: 10px;
   margin-top: 20px;
   font-weight: 650;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
