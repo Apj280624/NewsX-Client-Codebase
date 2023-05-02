@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/NewsX/static/css/main.accdef23.css",
+    "main.js": "/NewsX/static/js/main.05c19782.js",
+    "static/media/newsx-placeholder.png": "/NewsX/static/media/newsx-placeholder.83c65b3bda480152f835.png",
+    "index.html": "/NewsX/index.html",
+    "main.accdef23.css.map": "/NewsX/static/css/main.accdef23.css.map",
+    "main.05c19782.js.map": "/NewsX/static/js/main.05c19782.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.accdef23.css",
+    "static/js/main.05c19782.js"
+  ]
+}
